@@ -21,6 +21,7 @@ import { FaStackOverflow } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa";
 import { FaDribbble } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import Prism from "../components/Prism.jsx";
 
 const Home = ({ showContactModal, setShowContactModal }) => {
   const dispatch = useDispatch();
@@ -42,9 +43,23 @@ const Home = ({ showContactModal, setShowContactModal }) => {
       {loading ? (
         <div className="loading loading-spinner loading-lg"></div>
       ) : (
-        <div className="flex flex-col justify-center items-center p-20 max-h-[95vh] min-h-[98vh] overflow-y-hidden ">
-          {/* <div className="mx-auto"> */}
-            {/* <motion.div
+        <div className="flex flex-col justify-center items-center px-20 overflow-y-hidden  w-full">
+          <div style={{ width: '100%', height: '750px', position: 'relative' }}>
+            <Prism
+              animationType="rotate"
+              timeScale={0.5}
+              height={6.5}
+              baseWidth={5.5}
+              scale={2}
+              hueShift={1.36}
+              colorFrequency={2.2}
+              noise={0.0}
+              glow={.3}
+            />
+          </div>
+         
+          <div className=" text-white w-2/3 flex flex-col justify-evenly -mt-120 mb-10">
+            <motion.div
               initial={{ opacity: 0, scale: 0.8 }} // Starting state
               animate={{ opacity: 1, scale: 1 }} // Animated state
               transition={{
@@ -56,123 +71,108 @@ const Home = ({ showContactModal, setShowContactModal }) => {
                 damping: 30, // Make the bounce a bit more controlled
               }}
             >
-              <ProfileCard setShowContactModal={setShowContactModal} />
-            </motion.div> */}
-            <div className=" text-white w-2/3 flex flex-col justify-evenly">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }} // Starting state
-                animate={{ opacity: 1, scale: 1 }} // Animated state
-                transition={{
-                  duration: 1, // Overall animation length
-                  ease: "easeIn", // Smooth deceleration at the end
-                  delay: 0.2, // Short pause before starting
-                  type: "spring",
-                  stiffness: 80,
-                  damping: 30, // Make the bounce a bit more controlled
-                }}
+              <h2 className="text-center  tracking-tight text-white uppercase">
+                <span className="text-[#4c1d95] font-semibold text-4xl lex ">
+                  let's work
+                </span>
+                <br />
+                <span className="text-[#0e7490] name font-bold text-6xl lex">
+                  together
+                </span>
+              </h2>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }} // Starting state
+              animate={{ opacity: 1, scale: 1 }} // Animated state
+              transition={{
+                duration: 1, // Overall animation length
+                ease: "easeIn", // Smooth deceleration at the end
+                delay: 0.2, // Short pause before starting
+                type: "spring",
+                stiffness: 80,
+                damping: 30, // Make the bounce a bit more controlled
+              }}
+            >
+              <GradientText
+                colors={[
+                  "#4c1d95",
+                  "#0e7490",
+                  "#4c1d95",
+                  "#0e7490",
+                  "#4c1d95",
+                ]}
+                animationSpeed={6}
+                showBorder={false}
+                className="text-xl tracking-wider font-semibold p-2 "
               >
-                <h2 className="text-center  tracking-tight text-white uppercase">
-                  <span className="text-[#4c1d95] font-semibold text-4xl lex ">
-                    let's work
-                  </span>
-                  <br />
-                  <span className="text-[#0e7490] name font-bold text-6xl lex">
-                    together
-                  </span>
-                </h2>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }} // Starting state
-                animate={{ opacity: 1, scale: 1 }} // Animated state
-                transition={{
-                  duration: 1, // Overall animation length
-                  ease: "easeIn", // Smooth deceleration at the end
-                  delay: 0.2, // Short pause before starting
-                  type: "spring",
-                  stiffness: 80,
-                  damping: 30, // Make the bounce a bit more controlled
-                }}
-              >
-                <GradientText
-                  colors={[
-                    "#4c1d95",
-                    "#0e7490",
-                    "#4c1d95",
-                    "#0e7490",
-                    "#4c1d95",
-                  ]}
-                  animationSpeed={6}
-                  showBorder={false}
-                  className="text-xl tracking-wider font-semibold p-2 "
-                >
-                  <div className="text-2xl lex ">
-                    🚀 Specializing in MERN stack 🌟 Looking to build something amazing 🧠 AI interest
-                    
-                  </div>
-                </GradientText>
-              </motion.div>
-              <Frameworks />
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }} // Starting state
-                animate={{ opacity: 1, scale: 1 }} // Animated state
-                transition={{
-                  duration: 1, // Overall animation length
-                  ease: "easeIn", // Smooth deceleration at the end
-                  delay: 0.2, // Short pause before starting
-                  // type: "spring",
-                  stiffness: 80,
-                  damping: 30, // Make the bounce a bit more controlled
-                }}
-                className="mx-auto"
-              >
-                <GradientText
-                  colors={[
-                    "#4c1d95",
-                    "#0e7490",
-                    "#4c1d95",
-                    "#0e7490",
-                    "#4c1d95",
-                  ]}
-                  animationSpeed={2}
-                  showBorder={false}
-                >
-                  <div className="flex justify-between mt-10 w-full mx-3 gap-5">
-                    <div className="flex flex-col items-center ">
-                      <div className="text-5xl font-bold"> 2+</div>{" "}
-                      <div className="text-xl text-[#0e7490] font-semibold uppercase">
-                        Years of <br></br>Experience
-                      </div>
-                    </div>
+                <div className="text-2xl lex ">
+                  🚀 Specializing in MERN stack 🌟 Looking to build something amazing 🧠 AI interest
 
-                    <div className="flex flex-col items-center">
+                </div>
+              </GradientText>
+            </motion.div>
+            <Frameworks />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }} // Starting state
+              animate={{ opacity: 1, scale: 1 }} // Animated state
+              transition={{
+                duration: 1, // Overall animation length
+                ease: "easeIn", // Smooth deceleration at the end
+                delay: 0.2, // Short pause before starting
+                // type: "spring",
+                stiffness: 80,
+                damping: 30, // Make the bounce a bit more controlled
+              }}
+              className="mx-auto"
+            >
+              <GradientText
+                colors={[
+                  "#4c1d95",
+                  "#0e7490",
+                  "#4c1d95",
+                  "#0e7490",
+                  "#4c1d95",
+                ]}
+                animationSpeed={2}
+                showBorder={false}
+              >
+                <div className="flex justify-between mt-10 w-full mx-3 gap-5">
+                  <div className="flex flex-col items-center ">
+                    <div className="text-5xl font-bold"> 2+</div>{" "}
+                    <div className="text-xl text-[#0e7490] font-semibold uppercase">
+                      Years of <br></br>Experience
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col items-center">
+                    {" "}
+                    <div className="text-5xl font-bold  ">55+</div>
+                    <div className="text-lg text-[#0e7490] font-semibold uppercase">
                       {" "}
-                      <div className="text-5xl font-bold  ">55+</div>
-                      <div className="text-lg text-[#0e7490] font-semibold uppercase">
-                        {" "}
-                        Projects<br></br>completed
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col items-center">
-                      <div className="text-5xl font-bold">106+</div>
-
-                      <div className="text-xl text-[#0e7490] font-semibold uppercase">
-                        Edibit<br></br> Challenges
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col items-center justify-center">
-                      <div className="text-5xl font-bold">238+</div>
-                      <div className="text-xl text-[#0e7490] font-semibold uppercase">
-                        GitLab<br></br>Contributions
-                      </div>
+                      Projects<br></br>completed
                     </div>
                   </div>
-                </GradientText>
-              </motion.div>
-            </div>
+
+                  <div className="flex flex-col items-center">
+                    <div className="text-5xl font-bold">106+</div>
+
+                    <div className="text-xl text-[#0e7490] font-semibold uppercase">
+                      Edibit<br></br> Challenges
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col items-center justify-center">
+                    <div className="text-5xl font-bold">238+</div>
+                    <div className="text-xl text-[#0e7490] font-semibold uppercase">
+                      GitLab<br></br>Contributions
+                    </div>
+                  </div>
+                </div>
+              </GradientText>
+            </motion.div>
           </div>
-        // </div>
+        </div>
+        
       )}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }} // Starting state
@@ -187,7 +187,7 @@ const Home = ({ showContactModal, setShowContactModal }) => {
         }}
         className="mx-auto"
       >
-        <div className="flex -mt-40 mx-80">
+        <div className="flex mx-80">
           {" "}
           <a
             href="https://github.com/danidev7777"
@@ -213,7 +213,7 @@ const Home = ({ showContactModal, setShowContactModal }) => {
             {" "}
             <FaDribbble size={35} fill="#0891b2" />
           </a>
-         
+
           <a
             href="https://www.linkedin.com/in/danielle-walker-b0987a37a/"
             target="_blank"
@@ -221,8 +221,8 @@ const Home = ({ showContactModal, setShowContactModal }) => {
           >
             <ImLinkedin size={35} fill="#0891b2" />
           </a>
-         
-         
+
+
         </div>
       </motion.div>
     </>

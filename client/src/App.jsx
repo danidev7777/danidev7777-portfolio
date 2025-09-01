@@ -8,8 +8,6 @@ import Home from "./pages/Home";
 import Projectsv2 from "./pages/Projectsv2.jsx";
 import ProjectDetail from "./pages/ProjectDetail.jsx";
 import ContactModal from "./components/ContactModal.jsx";
-// import BlogList from "./pages/BlogList.jsx";
-// import BlogDetail from "./pages/BlogDetail.jsx";
 
 
 function App() {
@@ -28,11 +26,7 @@ function App() {
   return (
     <div
       className="bg-zinc-900 dark:bg-zinc-900 text-white min-h-screen scroll-smooth"
-    // className={`${
-    //   displayScrollbar
-    //     ? "[&::-webkit-scrollbar]:w-[8px] [&::-webkit-scrollbar-track] [&::-webkit-scrollbar-thumb]: [&::-webkit-scrollbar-thumb]:rounded-[4px]"
-    //     : "scrollbar-hide"
-    // }`}
+
     >
       {showContactModal && (
         <ContactModal
@@ -86,7 +80,7 @@ function App() {
             />
           }
         />
-        {/* <Route path="/about" element={<About />} /> */}
+
         <Route
           path="/resume"
           element={
@@ -96,17 +90,7 @@ function App() {
             />
           }
         />
-        {/* <Route
-          path="/blog/:id"
-          element={
-            <BlogDetail
-              showContactModal={showContactModal}
-              setShowContactModal={setShowContactModal}
-            />
-          }
-        /> */}
 
-        {/* <Route path="/blog" element={<BlogList />} /> */}
       </Routes>
     </div>
   );

@@ -28,16 +28,17 @@ const ProjectDetail = ({ showContactModal, setShowContactModal }) => {
 
   return (
     <>
-      {/* {console.log("video", project.details.video)} */}
+      
       {loading ? (
         <>
-          <div className="flex text-center h-[10vh] w-2/4 text-6xl text-white mx-auto  items-center pt-98">
-            <PathMorphing />
+          <div className="flex text-center h-[10vh] w-400 text-6xl text-white mx-auto pl-48  gap-4 pt-48">
+            <PathMorphing className="pl-48"/>
+            
             <GradientText
               colors={["#4c1d95", "#0e7490", "#4c1d95", "#0e7490", "#4c1d95"]}
               animationSpeed={1}
               showBorder={false}
-              className="text-8xl tracking-wider font-semibold py-10 h-80 mt-24  ml-10"
+              className="text-8xl tracking-wider font-semibold py-10 h-80 mt-24  ml-5"
             >
               {" "}
               Loading....{" "}

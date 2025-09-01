@@ -3,8 +3,7 @@ import Homesvg from "../icons/Homesvg";
 import Codesvg from "../icons/Codesvg";
 import Personsvg from "../icons/Personsvg";
 import Contactsvg from "../icons/Contactsvg";
-// import Foldersvg from "../icons/Foldersvg";
-import Blogsvg from "../icons/Blogsvg";
+
 
 const Navbar = ({ showContactModal, setShowContactModal }) => {
   const navigate = useNavigate();
@@ -23,9 +22,7 @@ const Navbar = ({ showContactModal, setShowContactModal }) => {
         <Link to="/resume" className=" hover:text-[#0e7490]  flex gap-1">
           <Personsvg size={20} />
         </Link>
-        {/* <Link to="/blog" className=" hover:text-[#0e7490]  flex gap-1">
-          <Blogsvg size={20} />
-        </Link> */}
+    
         <div
           onClick={() => {
             window.scrollTo({ top: 0, behavior: "smooth" }),
@@ -34,7 +31,7 @@ const Navbar = ({ showContactModal, setShowContactModal }) => {
           className=" hover:text-[#0e7490] flex gap-1"
         >
           <Contactsvg size={20} />
-          {/* Contact */}
+       
         </div>
       </div>
    
